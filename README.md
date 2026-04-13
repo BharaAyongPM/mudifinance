@@ -31,22 +31,22 @@ Fokus utama aplikasi ini:
 
 - **Master data**
   Mengelola:
-  - akun kas
-  - kategori pemasukan/pengeluaran
-  - unit bisnis
+    - akun kas
+    - kategori pemasukan/pengeluaran
+    - unit bisnis
 
 - **Kategori yang lebih visual**
   Kategori menggunakan:
-  - color picker
-  - pilihan icon finance yang umum
-  - preview warna dan icon
+    - color picker
+    - pilihan icon finance yang umum
+    - preview warna dan icon
 
 - **Laporan**
   Menyediakan tampilan laporan dan halaman print untuk kebutuhan operasional maupun arsip.
 
 - **Role user**
-  - `admin`: mengelola user dan data aplikasi
-  - `user`: mengakses data keuangannya sendiri
+    - `admin`: mengelola user dan data aplikasi
+    - `user`: mengakses data keuangannya sendiri
 
 ## Teknologi
 
@@ -269,6 +269,4 @@ Favicon dan halaman login juga sudah memakai logo yang sama agar branding konsis
 
 MudiFinance dikembangkan sebagai bagian dari kebutuhan branding dan operasional **Mustika Digital Nusantara**. Jika repository ini dipublikasikan ke GitHub, bagian ini membantu menjelaskan identitas project dan kepemilikan brand sejak awal.
 
-## Lisensi
-
-Silakan sesuaikan lisensi repository ini dengan kebijakan distribusi project Anda sebelum dipublikasikan secara publik.
+https://mustikadigital.com/
