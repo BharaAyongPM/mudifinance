@@ -1,0 +1,40 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mudifinance-app
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    env_file:
+      - .env
+    ports:
+      - "${APP_PORT:-8083}:80"
+    volumes:
+      - mudifinance-storage:/var/www/html/storage
+
+  db:
+    image: mysql:8.0
+    container_name: mudifinance-db
+    restart: unless-stopped
+    command: --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE:-keuangan}
+      MYSQL_USER: ${DB_USERNAME:-mudifinance}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-mudifinance}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-rootpassword}
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -u$$MYSQL_USER -p$$MYSQL_PASSWORD --silent"]
+      interval: 10s
+      timeout: 5s
+      retries: 20
+      start_period: 30s
+    volumes:
+      - mudifinance-mysql:/var/lib/mysql
+      - ./public/keuangan.sql:/docker-entrypoint-initdb.d/keuangan.sql:ro
+
+volumes:
+  mudifinance-storage:
+  mudifinance-mysql:

@@ -1,0 +1,14 @@
+node_modules
+tests
+tailadmin-laravel-main
+.git
+.gitignore
+.editorconfig
+.gitattributes
+.phpunit.result.cache
+README.md
+storage/logs/*
+storage/framework/cache/*
+storage/framework/sessions/*
+storage/framework/testing/*
+storage/framework/views/*
